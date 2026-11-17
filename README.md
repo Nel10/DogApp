@@ -78,19 +78,60 @@ En este espacio se centralizará la documentación académica y técnica de DogA
 - **Tablero Jira:** [Seguimiento del proyecto](https://miniproyecto1.atlassian.net/?continue=https%3A%2F%2Fminiproyecto1.atlassian.net%2Fwelcome%2Fsoftware%3FprojectId%3D10132&atlOrigin=eyJpIjoiMGM3ZjVmNzk1MmJhNGIzYWIxZDg3NzdiZDNmY2RhZDIiLCJwIjoiamlyYS1zb2Z0d2FyZSJ9)
 - **Documentación:** [Documento principal](https://docs.google.com/document/d/1YXqE5odZ6duSelMpy7Tk9AC1Mr9ztPAr2b3ZenaDpVE/edit?usp=sharing)
 
-## 🌿 Control de versiones
+## 🌿 Control de versiones y estrategia de ramas
 
-Se utilizarán ramas para organizar el desarrollo de las historias de usuario:
+El proyecto utilizará Git y GitHub para gestionar el control de versiones y facilitar el trabajo colaborativo entre los integrantes.
 
-- `main`: versión estable del proyecto.
-- `develop`: integración de funcionalidades.
-- `feature/HU-1-login`
-- `feature/HU-2-home`
-- `feature/HU-3-nueva-cita`
-- `feature/HU-4-detalle`
-- `feature/HU-5-editar`
+Se manejarán dos ramas principales:
 
-Los cambios se integrarán mediante Pull Requests para facilitar la revisión del código y mantener organizada la colaboración.
+| Rama | Propósito |
+|---|---|
+| `develop` | Rama principal de desarrollo e integración de las funcionalidades del proyecto. |
+| `master` | Rama estable que contendrá la versión final o las versiones verificadas de la aplicación. |
+
+### Ramas de trabajo por historia de usuario
+
+Para organizar el desarrollo, cada integrante deberá crear una rama temporal a partir de `develop`, utilizando una nomenclatura que permita identificar la historia de usuario en la que está trabajando.
+
+La estructura será:
+
+`feature/HU-XX-descripcion`
+
+Ejemplos:
+
+- `feature/HU-01-login`
+- `feature/HU-02-home`
+- `feature/HU-03-nueva-cita`
+- `feature/HU-04-detalle`
+- `feature/HU-05-editar`
+
+Si se necesita corregir un error, se podrá utilizar:
+
+`fix/HU-XX-descripcion`
+
+### Flujo de trabajo
+
+1. Actualizar la rama `develop` antes de comenzar una actividad.
+2. Crear una rama de trabajo a partir de `develop`, identificando la historia de usuario correspondiente.
+3. Realizar los cambios y registrar commits descriptivos.
+4. Subir la rama de trabajo al repositorio remoto.
+5. Crear un Pull Request para integrar los cambios en `develop`.
+6. Revisar y validar los cambios antes de aprobar la integración.
+7. Una vez que las funcionalidades estén integradas y verificadas, realizar un Pull Request de `develop` hacia `master`.
+
+### Convención de commits
+
+Los mensajes de los commits deberán identificar la historia de usuario y el cambio realizado.
+
+Ejemplos:
+
+- `HU-01: Implementar autenticación biométrica`
+- `HU-02: Crear listado de citas`
+- `HU-03: Implementar registro de citas`
+- `HU-04: Implementar detalle de citas`
+- `HU-05: Implementar edición de citas`
+
+**Objetivo:** mantener una estructura organizada que permita identificar qué historia de usuario se está desarrollando, quién realiza los cambios y cómo se integran las funcionalidades al proyecto.
 
 ## 🚀 Instalación y ejecución
 
