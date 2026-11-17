@@ -97,7 +97,7 @@ Los cambios se integrarán mediante Pull Requests para facilitar la revisión de
 1. Clonar el repositorio:
 
    ```bash
-   git clone [URL_DEL_REPOSITORIO](https://github.com/Nel10/DogApp.git)
+   git clone https://github.com/Nel10/DogApp.git
    ```
 
 2. Abrir el proyecto desde Android Studio.
