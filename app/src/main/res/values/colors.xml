@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="login_background">#FF2B2E33</color>
+    <color name="launcher_background">#FFF4F1EC</color>
 </resources>
