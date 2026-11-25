@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">dogApp</string>
     <string name="login_title">DogApp</string>
-    <string name="home_title">Administrador de Citas</string>
+    <string name="home_title">Administrador\nde Citas</string>
+    <string name="nueva_cita">Nueva Cita</string>
+    <string name="agregar_cita">Agregar cita</string>
+    <string name="imagen_mascota">Foto de la mascota</string>
     <string name="dog_head_content_description">Cabeza de un perro</string>
     <string name="fingerprint_content_description">Huella digital. Toca para ingresar</string>
     <string name="biometric_title">Autenticación con Biometría</string>
