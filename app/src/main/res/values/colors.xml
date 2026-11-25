@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="login_background">#FF2B2E33</color>
     <color name="launcher_background">#FFF4F1EC</color>
+    <color name="fab_pink">#FFF05861</color>
+    <color name="symptom_gray">#FF8A8A8A</color>
 </resources>

@@ -21,6 +21,25 @@
         android:id="@+id/homeFragment"
         android:name="com.dogapp.view.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_addCitaFragment"
+            app:destination="@id/addCitaFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailCitaFragment"
+            app:destination="@id/detailCitaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addCitaFragment"
+        android:name="com.dogapp.view.fragment.AddCitaFragment"
+        android:label="fragment_add_cita"
+        tools:layout="@layout/fragment_add_cita" />
+
+    <fragment
+        android:id="@+id/detailCitaFragment"
+        android:name="com.dogapp.view.fragment.DetailCitaFragment"
+        android:label="fragment_detail_cita"
+        tools:layout="@layout/fragment_detail_cita" />
 
 </navigation>
