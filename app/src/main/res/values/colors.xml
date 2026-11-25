@@ -6,4 +6,8 @@
     <color name="launcher_background">#FFF4F1EC</color>
     <color name="fab_pink">#FFF05861</color>
     <color name="symptom_gray">#FF8A8A8A</color>
+    <color name="morado">#FF7E57C2</color>
+    <color name="hint_gris">#FF9E9E9E</color>
+    <color name="borde_gris">#FFBDBDBD</color>
+    <color name="fab_pink_inactivo">#66F05861</color>
 </resources>
