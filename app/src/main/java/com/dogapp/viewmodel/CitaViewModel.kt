@@ -30,6 +30,12 @@ class CitaViewModel(application: Application) : AndroidViewModel(application) {
     private val _mensaje = MutableLiveData<String>()
     val mensaje: LiveData<String> get() = _mensaje
 
+    private val _citaEliminada = MutableLiveData<Boolean>()
+    val citaEliminada: LiveData<Boolean> get() = _citaEliminada
+
+    private val _citaActualizada = MutableLiveData<Boolean>()
+    val citaActualizada: LiveData<Boolean> get() = _citaActualizada
+
     fun saveCita(cita: Cita) {
         viewModelScope.launch {
             _progressState.value = true
@@ -102,6 +108,37 @@ class CitaViewModel(application: Application) : AndroidViewModel(application) {
                 _progressState.value = false
                 _mensaje.value = ""
                 _mensaje.value = context.getString(R.string.error_guardar)
+            }
+        }
+    }
+
+    fun eliminarCita(cita: Cita) {
+        viewModelScope.launch {
+            _progressState.value = true
+            try {
+                citaRepository.deleteCita(cita)
+                _progressState.value = false
+                _citaEliminada.value = true
+            } catch (e: Exception) {
+                _progressState.value = false
+                _mensaje.value = ""
+                _mensaje.value = context.getString(R.string.error_eliminar)
+            }
+        }
+    }
+
+    fun actualizarCita(cita: Cita, rutaRaza: String) {
+        viewModelScope.launch {
+            _progressState.value = true
+            try {
+                val imagen = citaRepository.getImagenRaza(rutaRaza)
+                citaRepository.updateCita(cita.copy(imagen = imagen))
+                _progressState.value = false
+                _citaActualizada.value = true
+            } catch (e: Exception) {
+                _progressState.value = false
+                _mensaje.value = ""
+                _mensaje.value = context.getString(R.string.error_editar)
             }
         }
     }

@@ -40,6 +40,16 @@
         android:id="@+id/detailCitaFragment"
         android:name="com.dogapp.view.fragment.DetailCitaFragment"
         android:label="fragment_detail_cita"
-        tools:layout="@layout/fragment_detail_cita" />
+        tools:layout="@layout/fragment_detail_cita">
+        <action
+            android:id="@+id/action_detailCitaFragment_to_editCitaFragment"
+            app:destination="@id/editCitaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editCitaFragment"
+        android:name="com.dogapp.view.fragment.EditCitaFragment"
+        android:label="fragment_edit_cita"
+        tools:layout="@layout/fragment_edit_cita" />
 
 </navigation>

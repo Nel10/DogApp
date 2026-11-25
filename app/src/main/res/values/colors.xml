@@ -10,4 +10,6 @@
     <color name="hint_gris">#FF9E9E9E</color>
     <color name="borde_gris">#FFBDBDBD</color>
     <color name="fab_pink_inactivo">#66F05861</color>
+    <color name="fab_azul">#FF1A365D</color>
+    <color name="fondo_pantalla">#FFF5F5F7</color>
 </resources>

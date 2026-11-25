@@ -13,6 +13,12 @@
     <string name="atras">Volver</string>
     <string name="error_guardar">No se pudo guardar la cita</string>
     <string name="error_razas">No se pudieron cargar las razas</string>
+    <string name="editar_cita">Editar Cita</string>
+    <string name="eliminar_cita">Eliminar cita</string>
+    <string name="propietario_valor">Propietario: %1$s</string>
+    <string name="telefono_valor">Teléfono: %1$s</string>
+    <string name="error_editar">No se pudo editar la cita</string>
+    <string name="error_eliminar">No se pudo eliminar la cita</string>
     <string-array name="sintomas_lista">
         <item>Síntomas</item>
         <item>Solo duerme</item>
