@@ -121,7 +121,12 @@ class AddCitaFragment : Fragment() {
     private fun observerCitaGuardada() {
         citaViewModel.citaGuardada.observe(viewLifecycleOwner) { guardada ->
             if (guardada) {
-                findNavController().popBackStack()
+                binding.cvConfirmacion.isVisible = true
+                binding.cvConfirmacion.postDelayed({
+                    if (isAdded) {
+                        findNavController().popBackStack()
+                    }
+                }, 900)
             }
         }
     }
