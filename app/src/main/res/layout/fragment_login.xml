@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/login_background"
+        android:fitsSystemWindows="true"
+        tools:context=".view.fragment.LoginFragment">
+
+        <ImageView
+            android:id="@+id/ivPerro"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/dog_head_content_description"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_dog_head"
+            app:layout_constraintDimensionRatio="857:686"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_max="@dimen/login_dog_max_width"
+            app:layout_constraintWidth_percent="0.68" />
+
+        <TextView
+            android:id="@+id/tvDogApp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="@dimen/login_title_overlap"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/baloo2"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@string/login_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_title_size"
+            app:autoSizeMaxTextSize="@dimen/login_title_size"
+            app:autoSizeMinTextSize="28sp"
+            app:autoSizeStepGranularity="1sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivPerro" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieHuella"
+            android:layout_width="@dimen/fingerprint_size"
+            android:layout_height="@dimen/fingerprint_size"
+            android:layout_marginBottom="@dimen/fingerprint_margin_bottom"
+            android:clickable="true"
+            android:contentDescription="@string/fingerprint_content_description"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/fingerprint" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
