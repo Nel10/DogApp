@@ -9,6 +9,8 @@
     <string name="hint_telefono">Teléfono</string>
     <string name="guardar_cita">Guardar Cita</string>
     <string name="cita_guardada">Cita guardada</string>
+    <string name="cita_eliminada">Cita eliminada</string>
+    <string name="cita_editada">Cita editada</string>
     <string name="selecciona_sintoma">Selecciona un síntoma</string>
     <string name="selecciona_raza">Selecciona una raza de la lista</string>
     <string name="atras">Volver</string>
@@ -16,6 +18,9 @@
     <string name="error_razas">No se pudieron cargar las razas</string>
     <string name="editar_cita">Editar Cita</string>
     <string name="eliminar_cita">Eliminar cita</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="confirmar_eliminar">¿Seguro que deseas eliminar esta cita?</string>
     <string name="propietario_valor">Propietario: %1$s</string>
     <string name="telefono_valor">Teléfono: %1$s</string>
     <string name="error_editar">No se pudo editar la cita</string>

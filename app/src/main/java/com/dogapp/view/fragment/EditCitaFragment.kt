@@ -127,7 +127,12 @@ class EditCitaFragment : Fragment() {
     private fun observerCitaActualizada() {
         citaViewModel.citaActualizada.observe(viewLifecycleOwner) { actualizada ->
             if (actualizada) {
-                findNavController().popBackStack(R.id.homeFragment, false)
+                binding.cvConfirmacion.isVisible = true
+                binding.cvConfirmacion.postDelayed({
+                    if (isAdded) {
+                        findNavController().popBackStack(R.id.homeFragment, false)
+                    }
+                }, 900)
             }
         }
     }

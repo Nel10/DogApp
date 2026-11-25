@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -14,6 +16,7 @@ import com.dogapp.R
 import com.dogapp.databinding.FragmentDetailCitaBinding
 import com.dogapp.model.Cita
 import com.dogapp.viewmodel.CitaViewModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class DetailCitaFragment : Fragment() {
     private lateinit var binding: FragmentDetailCitaBinding
@@ -61,14 +64,30 @@ class DetailCitaFragment : Fragment() {
             findNavController().popBackStack()
         }
         binding.fbeliminar.setOnClickListener {
-            binding.fbeliminar.isEnabled = false
-            citaViewModel.eliminarCita(receivedCita)
+            confirmarEliminar()
         }
         binding.fbeditar.setOnClickListener {
             val bundle = Bundle()
             bundle.putSerializable("cita", receivedCita)
             findNavController().navigate(R.id.action_detailCitaFragment_to_editCitaFragment, bundle)
         }
+    }
+
+    private fun confirmarEliminar() {
+        val dialogo = MaterialAlertDialogBuilder(requireContext())
+            .setTitle(getString(R.string.eliminar_cita))
+            .setMessage(getString(R.string.confirmar_eliminar))
+            .setNegativeButton(getString(R.string.cancelar), null)
+            .setPositiveButton(getString(R.string.eliminar)) { _, _ ->
+                binding.fbeliminar.isEnabled = false
+                citaViewModel.eliminarCita(receivedCita)
+            }
+            .create()
+        dialogo.setOnShowListener {
+            dialogo.getButton(AlertDialog.BUTTON_POSITIVE)
+                .setTextColor(ContextCompat.getColor(requireContext(), R.color.fab_pink))
+        }
+        dialogo.show()
     }
 
     private fun observadorViewModel() {
@@ -80,7 +99,12 @@ class DetailCitaFragment : Fragment() {
     private fun observerCitaEliminada() {
         citaViewModel.citaEliminada.observe(viewLifecycleOwner) { eliminada ->
             if (eliminada) {
-                findNavController().popBackStack()
+                binding.cvConfirmacion.isVisible = true
+                binding.cvConfirmacion.postDelayed({
+                    if (isAdded) {
+                        findNavController().popBackStack()
+                    }
+                }, 900)
             }
         }
     }
